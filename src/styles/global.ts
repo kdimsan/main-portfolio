@@ -7,7 +7,9 @@ export default createGlobalStyle`
     
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
-        background: linear-gradient(45deg, #000 0%, #000 52%, #4f4f4f 100%);
+        background: linear-gradient(0deg, #141414 0%, #444444 100% );  
+        background-size: 300% 300%;
+        animation: background-spin 10s linear infinite;
     
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -23,10 +25,31 @@ export default createGlobalStyle`
     }
 
     body {
-        display: flex;
         min-width: 320px;
         min-height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
     }
-    // filter: drop-shadow(0 0 2em #646cffaa);
+
+    button {
+        cursor: pointer;
+
+        background: none;
+        border: none;
+    }
+
+    @keyframes background-spin {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
 `;
 
