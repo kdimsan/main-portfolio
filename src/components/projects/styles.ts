@@ -15,7 +15,30 @@ export const Content = styled.div`
         >li {
             list-style: none;
 
-            border: 1px solid silver;
+            border: 2px solid #0e0221;
+            border-radius: 5px;
         }
+    }
+`;
+
+export const ProjectForm = styled.div`
+    display: flex;
+    flex-direction: column;
+   
+    >img {
+        width: 30rem;
+        height: 20rem; 
+    }
+
+    >span {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        background: linear-gradient(0deg, #0e0221 0%, #1b0045 100%);
     }
 `;

@@ -7,9 +7,7 @@ export default createGlobalStyle`
     
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
-        background: linear-gradient(0deg, #141414 0%, #444444 100% );  
-        background-size: 300% 300%;
-        animation: background-spin 10s linear infinite;
+        background: linear-gradient(0deg, #141414 0%, #333333 100% );  
     
         font-synthesis: none;
         text-rendering: optimizeLegibility;
