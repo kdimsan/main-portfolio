@@ -26,7 +26,7 @@ export const ProjectForm = styled.div`
     flex-direction: column;
    
     >img {
-        width: 30rem;
+        width: 35rem;
         height: 20rem; 
     }
 

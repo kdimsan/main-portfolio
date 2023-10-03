@@ -7,7 +7,9 @@ export default createGlobalStyle`
     
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
-        background: linear-gradient(0deg, #141414 0%, #333333 100% );  
+        background: linear-gradient(45deg, #dbdbdb 0%, #5e018c 50%, #8c018c 100% );  
+        background-size: 200% 200%;
+        animation: background-spin 10s linear infinite;
     
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -43,7 +45,10 @@ export default createGlobalStyle`
             background-position: 0% 0%;
         }
         50% {
-            background-position: 100% 100%;
+            background-position: 100% 10%;
+        }
+        75%{
+            background-position: 10% 100%;
         }
         100% {
             background-position: 0% 0%;

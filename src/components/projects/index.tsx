@@ -9,8 +9,8 @@ export function Projects() {
     const handleModal = () => {
         setModalStatus(!modalStatus);
     };
-    
-    return (
+
+    return ( 
         <Container id="projects">
             <h2>Projects</h2>
             <Content>
@@ -20,7 +20,7 @@ export function Projects() {
                             <img src="src/docs/FoodExplorerImages/foodexplorer-login.gif" alt="Project preview" />
                             <span>Project FoodExplorer</span>
                         </ProjectForm>
-                        <FoodExplorerModal isOpen={ modalStatus }/>
+                        <FoodExplorerModal isOpen={ modalStatus } setModalClose={() => handleModal()}/>
                     </li>
                     <li>
                         <ProjectForm>
