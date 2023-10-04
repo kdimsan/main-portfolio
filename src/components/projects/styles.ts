@@ -2,21 +2,31 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     >h2 {
+        display: inline;
         font-size: 2rem;
     }
 `;
 
 export const Content = styled.div`
-    padding: 5rem;
+    margin: 2rem 0;
+
+    @media(min-width: 1024px) {
+        padding: 5rem;
+    }
     >ul {
         display: flex;
-        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.7rem;
+
+        @media(min-width: 1024px) {
+            flex-direction: row;
+            gap: 2rem;
+        }
 
         >li {
             list-style: none;
-
-            border: 2px solid #0e0221;
-            border-radius: 5px;
+            display: inherit;
         }
     }
 `;
@@ -24,10 +34,20 @@ export const Content = styled.div`
 export const ProjectForm = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+
+    border: 2px solid #0e0221;
+    border-radius: 5px;
+ 
    
     >img {
-        width: 35rem;
-        height: 20rem; 
+        width: 25rem;
+        height: 10rem; 
+
+        @media(min-width: 1024px) {
+            width: 35rem;
+            height: 20rem; 
+        }
     }
 
     >span {

@@ -1,13 +1,21 @@
 import { useState } from "react";
-import FoodExplorerModal from "./FoodExplorer-Project/fooxplorerModal";
+import ProjectModal from "./Modal/projectModal";
 import { Container, Content, ProjectForm } from "./styles";
+
+import { foodExplorerObject } from "../../docs/foodExplorer";
+import { movieTipObject } from "../../docs/movieTip";
 
 export function Projects() {
 
-    const [modalStatus, setModalStatus] = useState(false);
+    const [foodExplorerModal, setFoodExplorerModal] = useState(false);
+    const [movieTipModal, setMovieTipModal] = useState(false);
 
-    const handleModal = () => {
-        setModalStatus(!modalStatus);
+    const handleFoodExplorerModal = () => {
+        setFoodExplorerModal(!foodExplorerModal);
+    };
+
+    const handleMovieTipModal = () => {
+        setMovieTipModal(!movieTipModal);
     };
 
     return ( 
@@ -16,17 +24,26 @@ export function Projects() {
             <Content>
                 <ul>
                     <li>
-                        <ProjectForm onClick={ handleModal }>
-                            <img src="src/docs/FoodExplorerImages/foodexplorer-login.gif" alt="Project preview" />
-                            <span>Project FoodExplorer</span>
+                        <ProjectForm onClick={ handleFoodExplorerModal }>
+                            <img src="src/assets/FoodExplorerImages/foodexplorer-login.gif" alt="Project preview" />
+                            <span>FoodExplorer</span>
                         </ProjectForm>
-                        <FoodExplorerModal isOpen={ modalStatus } setModalClose={() => handleModal()}/>
+                        <ProjectModal 
+                            data={ foodExplorerObject } 
+                            isOpen={ foodExplorerModal } 
+                            setModalClose={ handleFoodExplorerModal }
+                        />
                     </li>
                     <li>
-                        <ProjectForm>
-                            <img src="src/docs/FoodExplorerImages/foodexplorer-login.gif" alt="Project preview" />
-                            <span>Project FoodExplorer</span>
+                        <ProjectForm onClick={ handleMovieTipModal }>
+                            <img src="src/assets/MovieSelectorImages/filmSelector_gif.gif" alt="Project preview" />
+                            <span>Movie Tips</span>
                         </ProjectForm>
+                        <ProjectModal 
+                            data={ movieTipObject }
+                            isOpen={ movieTipModal } 
+                            setModalClose={ handleMovieTipModal }
+                        />
                     </li>
                     <li>Project #3</li>
                 </ul>

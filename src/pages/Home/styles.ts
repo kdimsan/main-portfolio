@@ -5,8 +5,12 @@ export const Container = styled.div`
     flex-direction: column;
 
     >main {
-        padding: 0 5rem;
-        margin: 4rem 0;
+        padding: 0 2rem;
+        
+        @media(min-width: 1024px) {
+            padding: 0 5rem;
+            margin: 4rem 0;
+        }
         
         >div {
             height: 600px;
