@@ -1,7 +1,13 @@
 import { Container, DesktopHeader } from "./styles";
 import { FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
-export function Header() {  
+interface HeaderProps {
+    activeSection: string | null;
+}
+
+export function Header({ activeSection }: HeaderProps) {  
+
+    
     return(
         <Container> 
             <DesktopHeader>
@@ -12,9 +18,21 @@ export function Header() {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <a href="#about">
+                                <span className={ `underline ${ activeSection === "about" ? "active" : "" }` }>About</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects">
+                                <span className={ `underline ${ activeSection === "projects" ? "active" : "" }` }>Projects</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact">
+                                <span className={ `underline ${ activeSection === "contact" ? "active" : "" }` }>Contact</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <div className="links">

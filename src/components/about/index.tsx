@@ -1,6 +1,9 @@
-export function About() {
+import { SectionProps } from "../projects"
+
+
+export function About({ id, className }: SectionProps) {
     return (
-        <div id="about">
+        <div className={ className } id={ id }>
             <h2>About</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore sequi commodi delectus voluptates at temporibus voluptatum fugit aliquam velit, beatae, sed nemo autem, nisi alias rerum ab unde aliquid! Eum.
             Corrupti sit architecto sed ut nesciunt quod reiciendis quae laborum. Exercitationem doloremque odio, quas assumenda eius molestiae, magni asperiores rem nihil quia nisi? Mollitia eveniet eius cupiditate delectus similique dolor.

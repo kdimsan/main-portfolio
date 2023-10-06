@@ -10,13 +10,16 @@ export const Container = styled.div`
 
 export const Content = styled.div`
 
+
     >ul {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.7rem;
 
-        @media(min-width: 1024px) {
+        @media(min-width: 1400px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         >li {
@@ -29,7 +32,11 @@ export const Content = styled.div`
 export const ProjectForm = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+
+    width: fit-content;
+
+    margin-top: 1rem;
 
     border: 2px solid #0e0221;
     border-radius: 5px;
@@ -37,6 +44,10 @@ export const ProjectForm = styled.div`
     transition: transform 0.3s, filter 0.3s;
     
     cursor: pointer;
+
+    @media(min-width: 1400px) {
+        margin: 1rem;
+    }
 
     &:hover {
         transform: scale(1.05);

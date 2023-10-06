@@ -20,6 +20,7 @@ export const Container = styled.div`
 
     >main {
         overflow-x: auto;
+        
         @media(min-width: 1024px) {
             max-width: 60rem;
         }
@@ -29,6 +30,8 @@ export const Container = styled.div`
             min-height: 50rem;
             border-radius: 8px;
             height: 100vh;
+
+            border: 1px solid red;
         }
     }
 `;

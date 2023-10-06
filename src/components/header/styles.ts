@@ -35,6 +35,7 @@ export const DesktopHeader = styled.div`
     }
 
     >nav {
+
         >ul {
             display: flex;
             flex-direction: column;
@@ -42,14 +43,61 @@ export const DesktopHeader = styled.div`
             
             list-style: none;
 
+            
+
             >li {
                 font-size: ${({theme}) => theme.FONT_SIZE.FS_2L};
                 font-weight: 500;
                 transition: filter 0.2s ease-in-out;
 
+                
+
                 >a {
                     text-decoration: none;
                     color: rgba(255, 255, 255, 0.87);
+
+                    position: relative;
+                    display: inline-block;
+                    
+                    >.underline {
+                        position: relative;
+                        display: inline-block;
+                    }
+                    >.underline::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #fff;
+                        transform: scaleX(0);
+                        transform-origin: bottom left;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                    >.underline:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+
+                    >.active::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #fff;
+                        transform: scaleX(0);
+                        transform-origin: bottom left;
+                        transition: transform 0.3s ease-in-out;
+                    }
+                    >.active{
+                        &::after {
+                            transform: scaleX(1);
+                            transform-origin: bottom left;
+                        }
+                    }
                 }
 
                 &:hover {
@@ -62,6 +110,7 @@ export const DesktopHeader = styled.div`
     }
 
     >.links {
+        
         >ul{ 
             list-style: none;
 
@@ -73,9 +122,10 @@ export const DesktopHeader = styled.div`
                     >svg {
                         width: 2rem;
                         height: 2rem;
+                        color: #eee;
 
                         &:hover {
-                            filter: drop-shadow(0 0 3px #fff);
+                            filter: drop-shadow(0 0 3px #aaa);
                             transform: translate(-1px, -1px);
                         }
                     }

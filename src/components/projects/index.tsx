@@ -5,7 +5,12 @@ import { Container, Content, ProjectForm } from "./styles";
 import { foodExplorerObject } from "../../docs/foodExplorer";
 import { movieTipObject } from "../../docs/movieTip";
 
-export function Projects() {
+export interface SectionProps {
+    id: string;
+    className: string;
+}
+
+export function Projects({ id, className }:SectionProps) {
 
     const [foodExplorerModal, setFoodExplorerModal] = useState(false);
     const [movieTipModal, setMovieTipModal] = useState(false);
@@ -19,7 +24,7 @@ export function Projects() {
     };
 
     return ( 
-        <Container id="projects">
+        <Container className={ className } id={id}>
             <h2>Projects</h2>
             <Content>
                 <ul>

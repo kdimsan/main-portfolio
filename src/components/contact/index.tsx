@@ -1,6 +1,8 @@
-export function Contact() {
+import { SectionProps } from "../projects"
+
+export function Contact({ id, className }: SectionProps) {
     return (
-        <div id="contact">
+        <div className={ className } id={ id }>
             <h2>Contact</h2>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt error illum voluptate provident voluptatibus vel possimus accusantium vitae illo cum, similique omnis qui incidunt odio, doloremque assumenda, quaerat fugiat doloribus.
             Error dolorum quo quasi libero vero eligendi laborum ut amet blanditiis? Recusandae, libero. Pariatur rerum deleniti deserunt aperiam quam unde reiciendis neque, velit inventore soluta et, assumenda, sunt recusandae voluptates.
