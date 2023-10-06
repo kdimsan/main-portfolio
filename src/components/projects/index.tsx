@@ -15,7 +15,7 @@ export function Projects() {
     };
 
     const handleMovieTipModal = () => {
-        setMovieTipModal(!movieTipModal);
+        setMovieTipModal(!movieTipModal);        
     };
 
     return ( 

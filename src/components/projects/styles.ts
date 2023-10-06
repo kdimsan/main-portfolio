@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
     >h2 {
         display: inline;
         font-size: 2rem;
@@ -8,11 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-    margin: 2rem 0;
 
-    @media(min-width: 1024px) {
-        padding: 5rem;
-    }
     >ul {
         display: flex;
         flex-direction: column;
@@ -20,8 +17,6 @@ export const Content = styled.div`
         gap: 1.7rem;
 
         @media(min-width: 1024px) {
-            flex-direction: row;
-            gap: 2rem;
         }
 
         >li {
@@ -38,16 +33,19 @@ export const ProjectForm = styled.div`
 
     border: 2px solid #0e0221;
     border-radius: 5px;
- 
+
+    transition: transform 0.3s, filter 0.3s;
+    
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(1px 1px 5px #000) brightness(0.5);
+    }
    
     >img {
         width: 25rem;
         height: 10rem; 
-
-        @media(min-width: 1024px) {
-            width: 35rem;
-            height: 20rem; 
-        }
     }
 
     >span {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, ModalContent, ModalText, ModalImage } from "./styles";
 import  { FaGithub }  from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -7,16 +8,30 @@ import { ImagesHandler } from "../../imagesHandler";
 
 export interface ModalProps {
   isOpen: boolean;
-  setModalClose: React.MouseEventHandler;
+  setModalClose: () => void;
   data: FoodExplorerProps;
 }
 
 export default function ProjectModal({ isOpen, setModalClose, data }: ModalProps) {
 
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const handlemodal = setModalClose;
+
+  const handleFade = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      handlemodal();     
+    }, 500)
+  };
+
   if(isOpen) {
     return (
       <Container>
-        <ModalContent>
+        <ModalContent 
+          className={ fadeOut ? "fadeout" : "" }
+          onAnimationEnd={ () => setFadeOut(false) }
+        >
           <div>
             <ModalImage>
                 <ImagesHandler data={data}/>
@@ -29,7 +44,7 @@ export default function ProjectModal({ isOpen, setModalClose, data }: ModalProps
                 {
                   data.online &&
                     <p>
-                        This webpage is online <a href={ data.link }> here</a>
+                        This webpage is online <a className="underline" href={ data.link }> here</a>
                     </p>
                   }
                   {
@@ -49,12 +64,10 @@ export default function ProjectModal({ isOpen, setModalClose, data }: ModalProps
                     product, please wait and refresh the page.
                     </span>
                   }
-              
-              <span><FaGithub /><a href={ data.repository }>Repository</a></span>
-              
+              <button><FaGithub /><a href={ data.repository }>Repository</a></button>
             </ModalText>
           </div>
-          <button onClick={setModalClose}><AiOutlineCloseCircle /></button>
+          <button onClick={ handleFade }><AiOutlineCloseCircle /></button>
         </ModalContent>
       </Container>
     )

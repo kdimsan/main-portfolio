@@ -1,130 +1,89 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 7rem;
+    height: 100vh;
+    
 
     display: flex;
-    align-items: center;
-
-    padding: 0 3rem;
-
-    border-bottom: 1px solid silver;  
-
-    @media(min-width: 1024px) {
-        padding: 0 5rem;
-    }
-`;
-
-export const MobileHeader = styled.div`
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    >button {
-        width: 2.2rem;
-        height: 2.2rem;
-
-        >svg {
-            width: 2.2rem;
-            height: 2.2rem;
-        }
-    }
-
-    .sidebar {
-        width: 40%;
-        max-width: 30rem;
-        height: 100%;
-
-        display: flex;
-
-        padding: 3rem 2rem;
-
-        position: fixed;
-        top: 0;
-        right: -100%;
-        
-        background: linear-gradient(0deg, #202023 0%, #333333 100%);
-
-        >button {
-            position: absolute;
-            top: 7px;
-            right: 7px;
-
-            >svg {
-                width: 2rem;
-                height: 2rem;
-            }
-        }
-
-        >ul {
-            list-style: none;
-
-            >li {
-                margin: 5px;
-                font-size: 1.7rem;   
-                font-weight: 500;
-            }
-        }
-    }
-
-    .sidebar-open {
-        right: 0;
-        animation: sidebar-open .5s ease;
-    }
-
-    .sidebar-close { 
-        right: -100%;
-        animation: sidebar-close .5s ease;
-    }
-
-    @keyframes sidebar-open {
-        from {
-            right: -100%;
-        }
-        to {
-            right: 0;
-        }
-    }
-
-    @keyframes sidebar-close {
-        from {
-            right: 0;
-        }
-        to {
-            right: -100%;
-        }
-    }
-
+    justify-content: center;
+    
+    padding: 10rem 0;
+    
+    position: sticky;
 `;
 
 export const DesktopHeader = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
-    width: 100%;
+    margin-right: 3rem;
 
-    >ul {
-        display: flex;
-        gap: 1.5rem;
-        
-        list-style: none;
+    >.apresentation {
+        >span {
+            font-size: ${({theme}) => theme.FONT_SIZE.FS_M};
+        }
 
-        >li {
-            font-size: 1.8rem;
-            font-weight: 500;
+        >h1 {
+            font-size: ${({theme}) => theme.FONT_SIZE.FS_6L};
+            white-space: nowrap;
+        }
 
-            >a {
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.87);
-            }
+        >h2 {
+            font-size: ${({theme}) => theme.FONT_SIZE.FS_2L};
+        }
+    }
 
-            &:hover {
-                filter: drop-shadow(0 0 2px #dbdbdb);
+    >nav {
+        >ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            
+            list-style: none;
 
-                cursor: pointer;
+            >li {
+                font-size: ${({theme}) => theme.FONT_SIZE.FS_2L};
+                font-weight: 500;
+                transition: filter 0.2s ease-in-out;
+
+                >a {
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.87);
+                }
+
+                &:hover {
+                    filter: drop-shadow(0 0 2px #dbdbdb);
+
+                    cursor: pointer;
+                }
             }
         }
     }
+
+    >.links {
+        >ul{ 
+            list-style: none;
+
+            display: flex;
+            gap: 1.5rem;
+
+            >li{
+                >a {
+                    >svg {
+                        width: 2rem;
+                        height: 2rem;
+
+                        &:hover {
+                            filter: drop-shadow(0 0 3px #fff);
+                            transform: translate(-1px, -1px);
+                        }
+                    }
+                }
+            } 
+        }
+        
+       
+    }
+    
 `;

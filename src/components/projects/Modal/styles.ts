@@ -8,6 +8,10 @@ export const Container = styled.div`
     right: 0;
     background-color: rgb(0, 0, 0, 0.6);
     z-index: 100;
+
+    .fadeout {
+        animation: fade-modal .4s ;
+    }
 `;
 
 export const ModalContent = styled.div`
@@ -18,20 +22,26 @@ export const ModalContent = styled.div`
     transform: translate(-50%, -50%);
 
     max-height: 80%;
+    min-height: 60%;
     width: 90%;
     overflow-y: auto;
 
     padding: 4rem;
 
-    background: linear-gradient(45deg, #dbdbdb 0%, rgb(140, 1, 140, 0.8) 30%, #5e018c 100% );  
+    background: linear-gradient(45deg, #dbdbdb 0%, rgb(140, 1, 140, 0.8) 30%, #5e018c 100% );
     border-radius: 10px;
 
-    @media(min-width: 1024px) and (max-width: 1300px) {
+    opacity: 0;
+
+    animation: open-modal .5s .1s forwards ease-in-out; 
+
+    @media(min-width: 1024px) and (max-width: 1299px) {
         padding: 4rem;
         width: 80%;
     }
-    @media(min-width: 1301px) {
+    @media(min-width: 1300px) {
         width: 70%;
+        display: flex;
     }
 
     >div {
@@ -51,9 +61,32 @@ export const ModalContent = styled.div`
         position: absolute;
         top: 20px;
         right: 15px;
+
         >svg {
             width: 2rem;
             height: 2rem;
+        }
+    }
+
+    @keyframes fade-modal {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            transform: translate(-50%, -20%);
+        }
+    }
+
+    @keyframes open-modal {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -80%);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            
         }
     }
 `;
@@ -62,10 +95,35 @@ export const ModalImage = styled.div`
 `;
 
 export const ModalText = styled.div`
+
+    .underline {
+        position: relative;
+        display: inline-block;
+    }
+
+    .underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0; 
+        width: 100%; 
+        height: 2px; 
+        background-color: #fff;  
+        transform: scaleX(0); 
+        transform-origin: bottom left; 
+        transition: transform 0.3s ease; 
+    }
+
+    .underline:hover::after {
+        transform: scaleX(1); 
+        transform-origin: bottom left; 
+    }
+
     @media(min-width: 320px) and (max-width: 1024px) {
         display: flex;
         flex-direction: column;
     }
+    
     >h2 {
         font-size: 2.2rem;
         margin: 2rem 0 0;
@@ -80,14 +138,16 @@ export const ModalText = styled.div`
         font-size: 1.5rem;
         text-align: justify;
 
-        margin: 1rem 0;
+        margin: 1rem 0;  
 
         >a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.87);
+            transition: filter 0.3s;
 
             &:hover {
-                filter: drop-shadow(0 0 2px #dddddd);
+                filter: drop-shadow(0 0 2px #fff);
+                outline: none;
             }
         }
 
@@ -106,6 +166,27 @@ export const ModalText = styled.div`
         font-size: 1.5rem;
         text-align: justify;
 
+        @media(min-width: 1024px) {
+            font-size: 1.7rem;
+        }
+    }
+
+    >button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        
+        padding: 5px 0;
+
+        font-size: 1.5rem;
+
+        transition: transform 0.3s, filter 0.3s;
+
+        &:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 3px #fff);
+        }
+
         >svg {
             width: 2rem;
             height: 2rem;
@@ -114,10 +195,6 @@ export const ModalText = styled.div`
         >a {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.87);
-
-            &:hover {
-                filter: drop-shadow(0 0 2px #dddddd);
-            }
         }
 
         @media(min-width: 1024px) {

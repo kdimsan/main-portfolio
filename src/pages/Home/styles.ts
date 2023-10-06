@@ -4,23 +4,31 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+
+    position: fixed;
+
+    @media(min-width: 1024px) {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 10%;
+
+       padding: 0 8rem;
+    }
+
     >main {
-        padding: 0 2rem;
-        
+        overflow-x: auto;
         @media(min-width: 1024px) {
-            padding: 0 5rem;
-            margin: 4rem 0;
+            max-width: 60rem;
         }
         
         >div {
-            height: 600px;
-
-            border-bottom: 1px solid silver;
-            border-top: 1px solid silver;
+            margin-top: 10rem;
+            min-height: 50rem;
             border-radius: 8px;
-
-            padding: 1rem;
-            margin: 2rem 0;
+            height: 100vh;
         }
     }
 `;
