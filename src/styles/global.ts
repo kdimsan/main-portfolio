@@ -8,7 +8,7 @@ export default createGlobalStyle`
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
 
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.87) 0%, rgb(140, 1, 140, 0.8) 50%, #5e018c 100% );  
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.87) 0%, rgb(140, 1, 140, 0.8) 30%, #5e018c 100% );  
         background-size: 200% 400%;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -18,7 +18,7 @@ export default createGlobalStyle`
 
         @media(min-width: 1024px) {
             background-size: 200% 200%;
-        animation: background-movement 10s linear infinite;
+            animation: background-movement 10s linear infinite;
         }
 
       ::-webkit-scrollbar {

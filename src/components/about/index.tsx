@@ -1,29 +1,53 @@
-import { Container } from "./styles";
+import {
+  Container,
+  DevelopmentSkillsContent,
+  Knowledge,
+  SkillsContainer,
+} from "./styles";
 import { SectionProps } from "../projects";
+import { DiHtml5, DiNodejsSmall, DiReact, DiCss3 } from "react-icons/di";
+import { TbBrandTypescript, TbBrandJavascript } from "react-icons/tb";
 
 export function About({ id, className }: SectionProps) {
   return (
     <Container className={className} id={id}>
       <h2>About</h2>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore sequi
-        commodi delectus voluptates at temporibus voluptatum fugit aliquam
-        velit, beatae, sed nemo autem, nisi alias rerum ab unde aliquid! Eum.
-        Corrupti sit architecto sed ut nesciunt quod reiciendis quae laborum.
-        Exercitationem doloremque odio, quas assumenda eius molestiae, magni
-        asperiores rem nihil quia nisi? Mollitia eveniet eius cupiditate
-        delectus similique dolor. Repudiandae, doloribus! Dicta cupiditate
-        molestias numquam maiores dolores ullam nam amet repudiandae eligendi
-        beatae odit sapiente accusantium consequuntur hic maxime eos eius
-        ducimus ea rem similique, modi ratione. Ad, expedita. Enim provident
-        cumque error, laborum doloremque, nihil quasi velit ipsum placeat fugit
-        nulla assumenda odit rem consequuntur repellat, et obcaecati. Libero
-        voluptates quas incidunt dolorum magnam? Quam quo vel eos. Doloremque
-        voluptatum qui quam? Ea iusto expedita corrupti aspernatur nostrum
-        laudantium aliquam similique alias quaerat illo, tenetur et assumenda
-        consectetur numquam quas quod mollitia ipsam architecto recusandae quos
-        sed? Quaerat.
+        I have always been connected with computers, and decided since young
+        that would work with it. But my "first love" was with hardware, so I
+        started a graduation in computer engineering at UERJ in 2017. However,
+        overtime I noticed that developing softwares were what I really enjoy.
       </p>
+
+      <SkillsContainer>
+        <h3>Skills</h3>
+        <DevelopmentSkillsContent>
+          <h4>Development</h4>
+          <ul>
+            <li className="react">
+              <DiReact />
+            </li>
+            <li className="typescript">
+              <TbBrandTypescript />
+            </li>
+            <li className="javascript">
+              <TbBrandJavascript />
+            </li>
+            <li className="css">
+              <DiCss3 />
+            </li>
+            <li className="html5">
+              <DiHtml5 />
+            </li>
+            <li className="nodejs">
+              <DiNodejsSmall />
+            </li>
+          </ul>
+        </DevelopmentSkillsContent>
+        <Knowledge>
+          <h4>Knowledge</h4>
+        </Knowledge>
+      </SkillsContainer>
     </Container>
   );
 }
