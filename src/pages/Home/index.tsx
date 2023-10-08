@@ -40,9 +40,12 @@ export function Home() {
       <Header activeSection={activeSection} />
       <main>
         <About
-          className={activeSection === "about" ? "active" : ""}
+          className={`${
+            activeSection === "about" ? "active" : ""
+          } background-test`}
           id="about"
         />
+
         <Projects
           className={activeSection === "projects" ? "active" : ""}
           id="projects"

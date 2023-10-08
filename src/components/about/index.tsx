@@ -46,6 +46,26 @@ export function About({ id, className }: SectionProps) {
         </DevelopmentSkillsContent>
         <Knowledge>
           <h4>Knowledge</h4>
+          <ul>
+            <li>
+              <span>Git & Github</span>
+            </li>
+            <li>
+              <span>Axios</span>
+            </li>
+            <li>
+              <span>Express</span>
+            </li>
+            <li>
+              <span>SQLite</span>
+            </li>
+            <li>
+              <span>SASS</span>
+            </li>
+            <li>
+              <span>Styled-Components</span>
+            </li>
+          </ul>
         </Knowledge>
       </SkillsContainer>
     </Container>

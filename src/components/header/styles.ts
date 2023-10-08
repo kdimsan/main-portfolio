@@ -20,6 +20,8 @@ export const DesktopHeader = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
+
+    margin-top: 5px;
   }
 
   > .apresentation {

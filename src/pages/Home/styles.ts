@@ -27,17 +27,22 @@ export const Container = styled.div`
 
     > div {
       min-height: 50rem;
-      border-radius: 8px;
       height: 100vh;
 
       margin-top: 5rem;
 
-      border: 1px solid red;
+      position: relative;
+
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-radius: 30px;
+
+      padding: 1rem;
 
       > h2 {
-        font-size: ${({ theme }) => theme.FONT_SIZE.FS_3L};
+        font-size: ${({ theme }) => theme.FONT_SIZE.FS_4L};
 
-        margin-bottom: 2rem;
+        margin: 0 0 2rem 1rem;
       }
 
       @media (min-width: 1024px) {

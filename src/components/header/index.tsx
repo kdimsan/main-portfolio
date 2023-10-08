@@ -20,15 +20,13 @@ export function Header({ activeSection }: HeaderProps) {
     };
   });
 
-  console.log(windowWidth);
-
   return (
     <Container>
       <DesktopHeader>
         <div className="apresentation">
           <span>Hello, I'm</span>
           <h1>Ricardo Adame Sant'Ana</h1>
-          <h2>Front-end Developer.</h2>
+          <h2>Full-stack Developer.</h2>
         </div>
         {windowWidth >= 1024 && (
           <nav>
@@ -73,25 +71,22 @@ export function Header({ activeSection }: HeaderProps) {
         <div className="links">
           <ul>
             <li>
-              {" "}
-              <a href="">
-                {" "}
-                <FaGithub />{" "}
-              </a>{" "}
+              <a href="https://github.com/kdimsan" target="_blank">
+                <FaGithub />
+              </a>
             </li>
             <li>
-              {" "}
-              <a href="">
-                {" "}
-                <FaLinkedin />{" "}
-              </a>{" "}
+              <a
+                href="https://linkedin.com/in/ricardo-adame-santana/"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
             </li>
             <li>
-              {" "}
-              <a href="">
-                {" "}
+              <a href="mailto:ricardo.adame.santana@gmail.com">
                 <FaRegEnvelope />
-              </a>{" "}
+              </a>
             </li>
           </ul>
         </div>

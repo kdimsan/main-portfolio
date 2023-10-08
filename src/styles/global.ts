@@ -8,7 +8,7 @@ export default createGlobalStyle`
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
 
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0.87) 0%, rgb(140, 1, 140, 0.8) 30%, #5e018c 100% );  
+        background: linear-gradient(45deg, #7E4D96, #5E018C, #2E1C37 );  
         background-size: 200% 400%;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -46,19 +46,14 @@ export default createGlobalStyle`
 
     @keyframes background-movement {
         0% {
-            background-position: 100% 100%;
+            background-position: 0% 0%;
         }
-        25%{
-            background-position: 80% 80%;
-        }
-        50% {
-            background-position: 60% 100%;
-        }
-        75%{
-            background-position: 60% 80%;
+
+        50%{
+            background-position: 100% 40%;
         }
         100% {
-            background-position: 100% 100%;
+            background-position: 0% 0%;
         }
     }
 `;
