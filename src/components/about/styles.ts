@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-//AiFillHtml5 DiJavascript DiHtml5 DiNodejsSmall DiReact DiCss3 TbBrandTypescript
-
 export const Container = styled.div`
   > p {
     font-size: ${({ theme }) => theme.FONT_SIZE.FS_M};
@@ -130,9 +128,10 @@ export const DevelopmentSkillsContent = styled.div`
 
       display: inline-block;
 
-      background: linear-gradient(145deg, #9b2aa8, #83238d);
+      background: ${({ theme }) => theme.COLORS.BG_SKILLS};
       border-radius: 50%;
-      box-shadow: 5px 4px 10px #230727, -3px -4px 12px rgb(168, 45, 182, 0.7);
+      box-shadow: 5px 4px 10px ${({ theme }) => theme.COLORS.SHADOW_DARK},
+        -3px -4px 12px ${({ theme }) => theme.COLORS.SHADOW_LIGHT};
 
       position: relative;
       > svg {
@@ -178,12 +177,13 @@ export const Knowledge = styled.div`
 
     margin: 2rem;
     > li {
-      background: linear-gradient(145deg, #9b2aa8, #62136b 80%);
+      background: ${({ theme }) => theme.COLORS.BG_SKILLS};
       padding: 1rem;
 
       border-radius: 1rem;
 
-      box-shadow: 5px 5px 6px #230727, -6px -3px 10px 1px #95399f;
+      box-shadow: 5px 5px 6px ${({ theme }) => theme.COLORS.SHADOW_DARK},
+        -6px -3px 10px 1px ${({ theme }) => theme.COLORS.SHADOW_LIGHT};
 
       > span {
         font-size: ${({ theme }) => theme.FONT_SIZE.FS_M};
@@ -194,10 +194,11 @@ export const Knowledge = styled.div`
   @media (min-width: 1024px) {
     > ul {
       > li {
+        cursor: default;
         transition: transform 0.35s ease-in, box-shadow 0.25s ease;
         &:hover {
-          box-shadow: 5px 5px 0px rgba(255, 255, 255, 0.87),
-            7px 9px 10px rgba(255, 255, 255, 0.87);
+          box-shadow: 5px 5px 0px ${({ theme }) => theme.COLORS.LIGHT_900},
+            7px 9px 10px ${({ theme }) => theme.COLORS.LIGHT_900};
           transform: translate(-3px, -3px);
         }
       }

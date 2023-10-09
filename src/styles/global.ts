@@ -6,9 +6,9 @@ export default createGlobalStyle`
         font-size: 62.5%;
     
         color-scheme: light dark;
-        color: rgba(255, 255, 255, 0.87);
+        color: ${({ theme }) => theme.COLORS.LIGHT_900};
 
-        background: linear-gradient(45deg, #7E4D96, #5E018C, #2E1C37 );  
+        background: ${({ theme }) => theme.COLORS.BG_PRIMARY}; 
         background-size: 200% 400%;
         font-synthesis: none;
         text-rendering: optimizeLegibility;

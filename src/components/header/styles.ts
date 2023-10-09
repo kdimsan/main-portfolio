@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   @media (min-width: 1024px) {
     height: 100vh;
 
@@ -59,7 +59,7 @@ export const DesktopHeader = styled.div`
 
         > a {
           text-decoration: none;
-          color: rgba(255, 255, 255, 0.87);
+          color: ${({ theme }) => theme.COLORS.LIGHT_900};
 
           position: relative;
           display: inline-block;
@@ -144,5 +144,3 @@ export const DesktopHeader = styled.div`
     }
   }
 `;
-
-export const Sidebar = styled.div``;

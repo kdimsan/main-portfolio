@@ -11,30 +11,30 @@ export const Container = styled.div`
   padding: 5rem 2rem;
 
   @media (min-width: 1024px) {
-    position: fixed;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10%;
 
-    padding: 0 8rem;
+    padding: 5rem 8rem;
   }
 
   > main {
     @media (min-width: 1024px) {
       max-width: 60rem;
       overflow-x: auto;
+
+      margin: 5rem 0;
     }
 
     > div {
       min-height: 50rem;
-      height: 100vh;
 
       margin-top: 5rem;
 
       position: relative;
 
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
       border-radius: 30px;
 
       padding: 1rem;
@@ -43,12 +43,6 @@ export const Container = styled.div`
         font-size: ${({ theme }) => theme.FONT_SIZE.FS_4L};
 
         margin: 0 0 2rem 1rem;
-      }
-
-      @media (min-width: 1024px) {
-        &:nth-child(1) {
-          margin-top: 10rem;
-        }
       }
     }
   }

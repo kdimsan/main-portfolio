@@ -29,10 +29,10 @@ export const ProjectForm = styled.div`
 
   margin-top: 1rem;
 
-  border: 2px solid #0e0221;
+  border: 3px solid ${({ theme }) => theme.COLORS.PRIMARY_BORDER};
   border-radius: 5px;
 
-  transition: transform 0.3s, filter 0.3s;
+  transition: all 0.3s;
 
   cursor: pointer;
 
@@ -55,6 +55,6 @@ export const ProjectForm = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
 
-    background: linear-gradient(0deg, #0e0221 0%, #1b0045 100%);
+    background: ${({ theme }) => theme.COLORS.BG_PROJECTS};
   }
 `;

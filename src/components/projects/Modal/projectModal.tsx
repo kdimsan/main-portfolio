@@ -1,15 +1,21 @@
 import { useState } from "react";
-import { Container, ModalContent, ModalText, ModalImage } from "./styles";
+import {
+  Container,
+  ModalContent,
+  ModalText,
+  ModalImage,
+  LanguagesContainer,
+} from "./styles";
 import { FaGithub } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-import { FoodExplorerProps } from "../../../docs/foodExplorer";
+import { AppDataProps } from "../../../docs/foodExplorer";
 import { ImagesHandler } from "../../imagesHandler";
 
 export interface ModalProps {
   isOpen: boolean;
   setModalClose: () => void;
-  data: FoodExplorerProps;
+  data: AppDataProps;
 }
 
 export default function ProjectModal({
@@ -42,22 +48,22 @@ export default function ProjectModal({
             <ModalText>
               <h2>{data.title}</h2>
               <p>{data.description}</p>
-              {data.online && (
+
+              {data.online ? (
                 <p>
                   This webpage is online{" "}
                   <a className="underline" href={data.link}>
-                    {" "}
                     here
                   </a>
                 </p>
-              )}
-              {!data.online && (
+              ) : (
                 <p>
                   This page is not available online, but fell free to git clone
                   it. All you need to do after is run the commands "npm install"
                   and "npm run dev".
                 </p>
               )}
+
               {data.admin && (
                 <span>
                   Fell free to create an account using a fake email address or
@@ -66,6 +72,13 @@ export default function ProjectModal({
                   refresh the page.
                 </span>
               )}
+              <LanguagesContainer>
+                {data.languages.languages.map((language, index) => (
+                  <div>
+                    <span id={index.toString()}>{language}</span>
+                  </div>
+                ))}
+              </LanguagesContainer>
               <button>
                 <FaGithub />
                 <a href={data.repository}>Repository</a>
